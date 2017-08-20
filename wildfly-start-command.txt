@@ -1,0 +1,1 @@
+./standalone.sh -c standalone-ha.xml -b 127.0.0.1 -Djgroups.bind_addr=127.0.0.1 -Dinfinispan.stagger.delay=0 -Djavax.net.debug=all

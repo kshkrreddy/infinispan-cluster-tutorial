@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<infinispan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="urn:infinispan:config:8.0 http://www.infinispan.org/schemas/infinispan-config-8.0.xsd"
+        xmlns="urn:infinispan:config:8.0">
+   <jgroups>
+      <stack-file name="udp" path="BASE_PATH/libs/jgroups-udp.xml"/>
+   </jgroups>
+
+   <cache-container default-cache="weather">
+      <transport stack="udp" cluster="ee"/>
+      <replicated-cache name="weather" mode="SYNC" remote-timeout="20000">
+         <state-transfer timeout="20000" />
+         <compatibility/>
+      </replicated-cache>
+   </cache-container>
+
+</infinispan>
